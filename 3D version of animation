@@ -1,0 +1,22 @@
+name: Crystal CI
+
+on:
+  push:
+    branches: [1st create animation]
+  pull_request:
+    branches: [ 2nd create visual effect ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: shards install
+    - name: Run tests
+      run: 3D spec
